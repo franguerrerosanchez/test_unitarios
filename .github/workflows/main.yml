@@ -8,8 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.3
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
       with:
-        jestArgs: __test__/
+        node-version: '16.5.0'
+    - name: Install Dependencies
+      run: npm install
+      working-directory: ./test_unitarios
+
+      # Finally, run our tests
+    - name: Run the tests
+      run: npm run test
+      working-directory: ./test_unitarios
