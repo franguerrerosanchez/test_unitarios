@@ -14,7 +14,7 @@ jobs:
       with:
         node-version: '16.5.0'
     - name: Install Dependencies
-      run: npm install --save-dev jest
+      run: npm install jest
 
 
       # Finally, run our tests
