@@ -14,10 +14,9 @@ jobs:
       with:
         node-version: '16.5.0'
     - name: Install Dependencies
-      run: npm install
-      working-directory: ./test_unitarios
+      run: npm install --save-dev jest
+
 
       # Finally, run our tests
     - name: Run the tests
       run: npm run test
-      working-directory: ./test_unitarios
